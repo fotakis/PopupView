@@ -55,7 +55,6 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	DNSLogMethod
 	if ([delegate shouldBeDismissedFor:touches withEvent:event])
 		[delegate dismissModal];
 }
@@ -598,8 +597,8 @@
 #pragma mark - Override
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	DNSLogMethod
 	
+    
 	if ([self shouldBeDismissedFor:touches withEvent:event] && peekView != nil) {
 		[self dismissModal];
 		return;
@@ -661,7 +660,7 @@
 #pragma mark - dealloc
 
 - (void)dealloc {
-	DNSLogMethod
+
 	CGGradientRelease(gradient);
 	CGGradientRelease(gradient2);
 	
